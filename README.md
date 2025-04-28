@@ -5,8 +5,10 @@
 |Column              |Type       |Options                    |
 |--------------------|-----------|---------------------------|
 |nick_name           |string     |null: false                |
-|full_name           |string     |null: false                |
-|full_name_kana      |string     |null: false                |
+|last_name           |string     |null: false                |
+|first_name          |string     |null: false                |
+|last_name_kana      |string     |null: false                |
+|first_name_kana     |string     |null: false                |
 |email               |string     |null: false, unique: true  |
 |encrypted_password  |string     |null: false                |
 |date_of_birth       |date       |null: false                |
@@ -26,7 +28,7 @@ has_many :orders
 |content             |text       |null: false                    |
 |user                |references |null: false, foreign_key: true |
 |shipping_type_id    |integer    |null: false                    |
-|shipping_days_id    |integer    |null: false                    |
+|shipping_day_id     |integer    |null: false                    |
 |prefecture_id       |integer    |null: false                    |
 
 
@@ -39,9 +41,11 @@ has_one :order
 |Column              |Type       |Options                         |
 |--------------------|-----------|--------------------------------|
 |item                |references |null: false,foreign_key:true    |
+|user                |references |null: false,foreign_key:true    |
 
 ### Association
 belongs_to :item
+belongs_to :user
 has_one :address
 
 ## addressesテーブル
@@ -51,7 +55,7 @@ has_one :address
 |order               |references |null: false,foreign_key:true   |
 |telephone_number    |string     |null: false                    |
 |post_code           |string     |null: false                    |
-|prefecture          |integer    |null: false                    |
+|prefecture_id       |integer    |null: false                    |
 |city                |string     |null: false                    |
 |address             |string     |null: false                    |
 |building_name       |string     |                               |
