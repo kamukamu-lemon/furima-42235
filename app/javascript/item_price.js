@@ -7,7 +7,7 @@ const price = () => {
       addTaxDom.innerHTML = Math.floor(inputValue * 0.1);
 
       const addProfitDom = document.getElementById("profit");
-      addProfitDom.innerHTML = inputValue - addTaxDom.innerHTML;
+      addProfitDom.innerHTML = Math.floor(inputValue - addTaxDom.innerHTML);
     });
   };
 window.addEventListener("turbo:load", price);
