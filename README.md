@@ -54,12 +54,12 @@ has_one :address
 |Column              |Type       |Options                        |
 |--------------------|-----------|-------------------------------|
 |order               |references |null: false,foreign_key:true   |
-|telephone_number    |string     |null: false                    |
-|post_code           |string     |null: false                    |
+|phone_number        |string     |null: false                    |
+|postal_code         |string     |null: false                    |
 |prefecture_id       |integer    |null: false                    |
 |city                |string     |null: false                    |
-|address             |string     |null: false                    |
-|building_name       |string     |                               |
+|addresses           |string     |null: false                    |
+|building            |string     |                               |
 
 ### Association
 belongs_to :order
