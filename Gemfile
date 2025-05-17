@@ -50,6 +50,11 @@ group :development, :test do
   gem 'rspec-rails', '~> 4.0.0'
   gem 'factory_bot_rails'
   gem 'faker'
+  gem 'capistrano'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano3-unicorn'
 end
 
 group :development do
@@ -85,10 +90,6 @@ gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
 gem 'gon'
 gem 'payjp'
-
-group :development do
-  gem 'rubocop', '1.71.2', require: false
-end
 
 gem "aws-sdk-s3", require: false
 
